@@ -1,0 +1,250 @@
+﻿
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+@*<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>*@
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.min.js"></script>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/css/bootstrap-select.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.10.0/js/bootstrap-select.min.js"></script>
+
+
+<style>
+    .textboxheight {
+        height: 35px;
+    }
+
+    .paddingstyle {
+        padding-bottom: 5px;
+    }
+
+    .sumheader {
+        color: lightblue;
+        font-weight: bold;
+    }
+
+
+</style>
+<div class="container-fluid" ng-controller="customChartController">
+    <div class="row">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                Criteria
+            </div>
+            <div class="panel-body">
+                <div class="container-fluid">
+                    <div class="row">
+
+                        <div class="col-md-2 paddingstyle"><input placeholder="Start Date" type="text" id="dpStart" class="form-control textboxheight" ng-model="startdate" name="startDate"></div>
+                        <div class="col-md-2 paddingstyle"><input placeholder="End Date" type="text" id="dpEnd" class="form-control textboxheight" ng-model="enddate" name="endDate"></div>
+                        <div class="col-md-2 paddingstyle"><input placeholder="SKU" type="text" id="sku" class="form-control textboxheight" ng-model="sku" name="sku"></div>
+                        <div class="col-md-2 paddingstyle"><input placeholder="Title" type="text" id="skutitle" class="form-control textboxheight" ng-model="skutitle" name="skutitle"></div>
+                        <div class="col-md-2 paddingstyle"><input placeholder="Vendor" type="text" id="vendor" class="form-control textboxheight" ng-model="vendor" name="vendor"></div>
+                        <div class="col-md-2 paddingstyle"><input placeholder="ASIN" type="text" id="asin" class="form-control textboxheight" ng-model="asin" name="asin"></div>
+
+                    </div>
+                    <div class="row" style="padding-top:1em;">
+                        <div class="col-md-2">
+                            <select name="xperiod" id="xperiod" class="form-control selectpicker paddingstyle" title="Select Period" data-style="btn-inverse" ng-model="xperiod">
+                                <option selected></option>
+                                <option>Last Week</option>
+                                <option>Last Month</option>
+                                <option>Last Year</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="ctype" id="ctype" style="background-color:black;" class="form-control selectpicker paddingstyle" data-style="btn-inverse" ng-model="ctype">
+                                <option>Line</option>
+                                <option>Column</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select name="period" id="period" class="form-control selectpicker paddingstyle" data-style="btn-inverse" ng-model="period">
+                                <option>Daily</option>
+                                <option>Weekly</option>
+                                <option>Monthly</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select style="height:20px" name="fulfill" id="fulfill" class="form-control selectpicker paddingstyle" data-style="btn-inverse" ng-model="fulfill">
+                                <option value="">Select Fulfillment</option>
+                                <option>AMAZON_NA</option>
+                                <option>DEFAULT</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <select style="height:20px" name="datatype" id="datatype" class="form-control selectpicker paddingstyle" data-style="btn-inverse" ng-model="datatype">
+                                <option>OrderUAmount</option>
+                                <option>OrderUQuantity</option>
+                                <option>RefundUAmount</option>
+                                <option>AmountOther</option>
+                                <option>UnitCost</option>
+                                <option>TotalCost</option>
+                                <option>Profit</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="btn btn-primary" ng-click="addCriteria()">Add</button>
+                            <button class="btn btn-info" id="clear">Clear</button>
+                            <button class="btn btn-success" ng-click="refreshChart()">OK</button>
+                        </div>
+
+                    </div>
+                    <div class="row" ng-init="period = 'Daily';ctype = 'Line';datatype = 'OrderUAmount'">
+                        <div class="container-fluid">
+                            <div class="row" ng-repeat="criteria in criterias">
+                                <div class="col-xs-10" style="text-align:left">
+                                    <b>Start Date :</b> {{criteria.startdate}} &nbsp; <b>End Date:</b>  {{criteria.enddate}} &nbsp;
+                                    <span ng-show="criteria.xperiod != null"><b>Past Date :</b>{{criteria.xperiod}} &nbsp;</span>
+                                    <span ng-show="criteria.sku != null"><b>SKU :</b>{{criteria.sku}} &nbsp;</span>
+                                    <span ng-show="criteria.skutitle != null"><b>Title :</b>{{criteria.skutitle}} &nbsp;</span>
+                                    <span ng-show="criteria.vendor != null"><b>Vendor :</b> {{criteria.vendor}} &nbsp;</span>
+                                    <span ng-show="criteria.asin != null"><b>ASIN :</b> {{criteria.asin}} &nbsp;</span>
+                                    <b>Period :</b> {{criteria.period}} &nbsp;
+                                    <span ng-show="criteria.fulfill != null"><b>FulfillmentBy :</b> {{criteria.fulfill}} &nbsp;</span>
+                                    <b>DataType :</b> {{criteria.datatype}} &nbsp;
+                                    <button type="button" data-ng-click="removeRow($index)" class=" btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"> </span></button>
+
+                                </div>
+                                <div class="col-xs-2" style="text-align:left">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Report Summary</div>
+            <div class="panel-body" style="overflow-x: auto;">
+                <div class="container-fluid">
+                    <div class="row" style="color:whitesmoke;">
+                        <div class="row">
+                            <div class="col-md-7">
+                                <div class="col-md-3">
+                                    <span class="sumheader">Total Order Items</span> {{summaryDataModel.MainSummary.TotalOrderItems}}
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="sumheader">Units Ordered :</span> {{summaryDataModel.MainSummary.UnitsOrdered}}
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="sumheader">Ordered Product Sales :</span> ${{summaryDataModel.MainSummary.OrderedProductSales}}
+                                </div>
+                                <div class="col-md-3">
+                                    <span class="sumheader">Avg. Sales/Ord. Item :</span> ${{summaryDataModel.MainSummary.AvgSalesOrderItem}}
+                                </div>
+                            </div>
+                            <div class="col-md-5">
+
+                                <div class="col-md-4">
+                                    <span class="sumheader">Avg. Unt./Ord. Item :</span> {{summaryDataModel.MainSummary.AvgUnitsOrderItem}}
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="sumheader">Refund Amount :</span> ${{summaryDataModel.MainSummary.RefundAmount}}
+                                </div>
+                                <div class="col-md-4">
+                                    <span class="sumheader">Profit :</span> ${{summaryDataModel.MainSummary.Profit}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+
+        <div class="panel panel-primary">
+            <div class="panel-heading">{{period}} Order Quantity Summary</div>
+            <div class="panel-body">
+                <highchart  id="chart1" config="chartConfig"></highchart>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="row">
+        <div class="panel panel-primary">
+            <div class="panel-heading">Compare Sales</div>
+            <div class="panel-body">
+                <div class="container-fluid">
+                    <div class="col-md-12 table-responsive">
+                        <style>
+                            table {
+                                border-collapse: collapse;
+                            }
+
+                            table, th, td, tr {
+                                border: 1px solid lightblue;
+                            }
+                        </style>
+                        <table class="table">
+                            <thead>
+                                <tr style="background-color: steelblue;">
+                                    <th></th>
+                                    <th>Total Order Items</th>
+                                    <th>Units Ordered</th>
+                                    <th>Ordered Product Sales</th>
+                                    <th>Average Units/Order Item</th>
+                                    <th>Average Sales/Order Item</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>This Week So Far</td>
+                                    <td>{{summaryDataModel.ThisWeekSoFar.TotalOrderItems}}</td>
+                                    <td>{{summaryDataModel.ThisWeekSoFar.UnitsOrdered}}</td>
+                                    <td>{{summaryDataModel.ThisWeekSoFar.OrderedProductSales}}</td>
+                                    <td>{{summaryDataModel.ThisWeekSoFar.AvgUnitsOrderItem}}</td>
+                                    <td>{{summaryDataModel.ThisWeekSoFar.AvgSalesOrderItem}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Last Week</td>
+                                    <td>{{summaryDataModel.LastWeek.TotalOrderItems}}</td>
+                                    <td>{{summaryDataModel.LastWeek.UnitsOrdered}}</td>
+                                    <td>{{summaryDataModel.LastWeek.OrderedProductSales}}</td>
+                                    <td>{{summaryDataModel.LastWeek.AvgUnitsOrderItem}}</td>
+                                    <td>{{summaryDataModel.LastWeek.AvgSalesOrderItem}}</td>
+                                </tr>
+                                <tr>
+                                    <td>This Week Last Year</td>
+                                    <td>{{summaryDataModel.ThisWeekLastYear.TotalOrderItems}}</td>
+                                    <td>{{summaryDataModel.ThisWeekLastYear.UnitsOrdered}}</td>
+                                    <td>{{summaryDataModel.ThisWeekLastYear.OrderedProductSales}}</td>
+                                    <td>{{summaryDataModel.ThisWeekLastYear.AvgUnitsOrderItem}}</td>
+                                    <td>{{summaryDataModel.ThisWeekLastYear.AvgSalesOrderItem}}</td>
+                                </tr>
+                                <tr>
+                                    <td>% Change From Last Week</td>
+                                    <td>{{summaryDataModel.ChangeFromLastWeek.TotalOrderItemsPercent}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastWeek.UnitsOrderedPercent}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastWeek.OrderedProductSales}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastWeek.AvgUnitsOrderItem}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastWeek.AvgSalesOrderItem}}</td>
+                                </tr>
+                                <tr>
+                                    <td>% Change From Last Year</td>
+                                    <td>{{summaryDataModel.ChangeFromLastYear.TotalOrderItemsPercent}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastYear.UnitsOrderedPercent}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastYear.OrderedProductSales}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastYear.AvgUnitsOrderItem}}</td>
+                                    <td>{{summaryDataModel.ChangeFromLastYear.AvgSalesOrderItem}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

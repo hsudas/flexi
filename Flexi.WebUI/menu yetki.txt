@@ -1,0 +1,3 @@
+﻿
+insert into appmenuuser(userid,menuid) values('5c532bdb-c71b-4d2b-b98c-e0a1ca297d35',71)
+insert into appmenuuser(userid,menuid) values('62536667-2bf4-4aa8-ad96-38cc4b87ea06',71)

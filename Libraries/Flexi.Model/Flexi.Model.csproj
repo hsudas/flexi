@@ -1,0 +1,957 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F639823D-95AA-42AD-A0C7-00A78DCDD642}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Flexi.Model</RootNamespace>
+    <AssemblyName>Flexi.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Dapper">
+      <HintPath>..\DllPool\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.Contrib">
+      <HintPath>..\Flexi.Business\bin\Debug\Dapper.Contrib.dll</HintPath>
+    </Reference>
+    <Reference Include="Dapper.SimpleCRUD, Version=1.13.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\DllPool\Dapper.SimpleCRUD.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Bson, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Bson.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoDB.Driver, Version=1.11.0.92, Culture=neutral, PublicKeyToken=f686731cfb9cc103, processorArchitecture=MSIL">
+      <HintPath>..\packages\mongocsharpdriver.1.11.0\lib\net35\MongoDB.Driver.dll</HintPath>
+    </Reference>
+    <Reference Include="MongoRepository.Net45, Version=1.6.11.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MongoRepository.1.6.11\lib\net45\MongoRepository.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="MWSFinances_2015-05-01_v2018-01-01">
+      <HintPath>..\DllPool\MWSFinances_2015-05-01_v2018-01-01.dll</HintPath>
+    </Reference>
+    <Reference Include="MWSMerchantFulfillment_2015-06-01_v2016-03-30">
+      <HintPath>..\DllPool\MWSMerchantFulfillment_2015-06-01_v2016-03-30.dll</HintPath>
+    </Reference>
+    <Reference Include="Npgsql, Version=3.1.9.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.3.1.9\lib\net451\Npgsql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="RestSharp, Version=105.2.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\RestSharp.105.2.3\lib\net46\RestSharp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entity\AmazonReport\ReportFbaMyiUnsuppressedInventoryDataLog.cs" />
+    <Compile Include="Entity\AmazonReport\ReportGetFlatFileAllOrdersDataByLastUpdateLog.cs" />
+    <Compile Include="Entity\AmazonReport\ReportGetMerchantListingsDataLog.cs" />
+    <Compile Include="Entity\AmazonReport\ReportSchedule.cs" />
+    <Compile Include="Entity\Amazon\Asin.cs" />
+    <Compile Include="Entity\Amazon\AsinDetail.cs" />
+    <Compile Include="Entity\Amazon\AsinDetailLight.cs" />
+    <Compile Include="Entity\Amazon\AsinDetailLog.cs" />
+    <Compile Include="Entity\Amazon\AsinDetailTrigger.cs" />
+    <Compile Include="Entity\Amazon\AsinFeeDetail.cs" />
+    <Compile Include="Entity\Amazon\AsinFeeDetailLog.cs" />
+    <Compile Include="Entity\Amazon\AsinMatching.cs" />
+    <Compile Include="Entity\Amazon\AsinRanking.cs" />
+    <Compile Include="Entity\Amazon\CarrierMap.cs" />
+    <Compile Include="Entity\Amazon\CategoryMap.cs" />
+    <Compile Include="Entity\Amazon\Feed.cs" />
+    <Compile Include="Entity\Amazon\FeedPrice.cs" />
+    <Compile Include="Entity\Amazon\FeedSubmission.cs" />
+    <Compile Include="Entity\Amazon\InboundShipment.cs" />
+    <Compile Include="Entity\Amazon\InboundShipmentItem.cs" />
+    <Compile Include="Entity\Amazon\Inventory.cs" />
+    <Compile Include="Entity\Amazon\MerchantListingMatching.cs" />
+    <Compile Include="Entity\Amazon\MyAsin.cs" />
+    <Compile Include="Entity\Amazon\NotificationFulfillment.cs" />
+    <Compile Include="Entity\Amazon\NotificationFulfillmentShipmentPackage.cs" />
+    <Compile Include="Entity\Amazon\OrderItems.cs" />
+    <Compile Include="Entity\Amazon\OrderItemsPending.cs" />
+    <Compile Include="Entity\Amazon\Orders.cs" />
+    <Compile Include="Entity\Amazon\OrdersPending.cs" />
+    <Compile Include="Entity\Amazon\PriceLog.cs" />
+    <Compile Include="Entity\Amazon\PriceOfferSub.cs" />
+    <Compile Include="Entity\Amazon\PriceOffer.cs" />
+    <Compile Include="Entity\Amazon\PriceOfferLog.cs" />
+    <Compile Include="Entity\Amazon\PriceOfferSubLog.cs" />
+    <Compile Include="Entity\Amazon\PriceSummary.cs" />
+    <Compile Include="Entity\Amazon\PriceSummaryLog.cs" />
+    <Compile Include="Entity\Amazon\PriceTemplate.cs" />
+    <Compile Include="Entity\Amazon\ReportFbaMyiUnsuppressedInventoryData.cs" />
+    <Compile Include="Entity\Amazon\ReportRequest.cs" />
+    <Compile Include="Entity\Amazon\Sku.cs" />
+    <Compile Include="Entity\Amazon\Sku2.cs" />
+    <Compile Include="Entity\Amazon\SkuAsinMatchingPoco.cs" />
+    <Compile Include="Entity\Amazon\VendorItem.cs" />
+    <Compile Include="Entity\Application\AppLog.cs" />
+    <Compile Include="Entity\Application\AppMenu.cs" />
+    <Compile Include="Entity\Application\AppMenuRole.cs" />
+    <Compile Include="Entity\Application\AppParameter.cs" />
+    <Compile Include="Entity\Application\AppQuery.cs" />
+    <Compile Include="Entity\Application\AppRole.cs" />
+    <Compile Include="Entity\Application\AppUser.cs" />
+    <Compile Include="Entity\Application\Report.cs" />
+    <Compile Include="Entity\Application\ScheduleItem.cs" />
+    <Compile Include="Entity\Audit\AuditQuery.cs" />
+    <Compile Include="Entity\Audit\AuditQueryLog.cs" />
+    <Compile Include="Entity\BaseEntity.cs" />
+    <Compile Include="Entity\CampaignManager\CampaignBudget.cs" />
+    <Compile Include="Entity\CampaignManager\CampaignExtended.cs" />
+    <Compile Include="Entity\CampaignManager\Campaign.cs" />
+    <Compile Include="Entity\CampaignManager\CampaignSchedule.cs" />
+    <Compile Include="Entity\CampaignManager\KeywordExtended.cs" />
+    <Compile Include="Entity\CampaignManager\Profile.cs" />
+    <Compile Include="Entity\CampaignManager\Token.cs" />
+    <Compile Include="Entity\CanyonToken.cs" />
+    <Compile Include="Entity\Criteria.cs" />
+    <Compile Include="Entity\CustomAttributes.cs" />
+    <Compile Include="Entity\Dashboard\Application.cs" />
+    <Compile Include="Entity\Dashboard\PrintRequest.cs" />
+    <Compile Include="Entity\DataManagement.cs" />
+    <Compile Include="Entity\DB\CustomParameter.cs" />
+    <Compile Include="Entity\DocumentArchieve.cs" />
+    <Compile Include="Entity\ErrorLog.cs" />
+    <Compile Include="Entity\FileMapping.cs" />
+    <Compile Include="Entity\Finance\FinanceTransaction.cs" />
+    <Compile Include="Entity\Finance\FinanceSettlement.cs" />
+    <Compile Include="Entity\JobSchedulerLog.cs" />
+    <Compile Include="Entity\KeyValue.cs" />
+    <Compile Include="Entity\ListingChangeLog.cs" />
+    <Compile Include="Entity\MailInput.cs" />
+    <Compile Include="Entity\MailSend.cs" />
+    <Compile Include="Entity\MailTemplate.cs" />
+    <Compile Include="Entity\Ebay\EbayItem.cs" />
+    <Compile Include="Entity\MP\JetSettlement.cs" />
+    <Compile Include="Entity\MP\ListingError.cs" />
+    <Compile Include="Entity\MP\ListingLog.cs" />
+    <Compile Include="Entity\MP\MPPriceInventoryChange.cs" />
+    <Compile Include="Entity\MP\MrcInventory.cs" />
+    <Compile Include="Entity\MP\Order.cs" />
+    <Compile Include="Entity\MP\OrderItem.cs" />
+    <Compile Include="Entity\MP\Listing.cs" />
+    <Compile Include="Entity\MP\OrderShipment.cs" />
+    <Compile Include="Entity\MP\Price.cs" />
+    <Compile Include="Entity\MP\PriceLog.cs" />
+    <Compile Include="Entity\MP\ProductBundle.cs" />
+    <Compile Include="Entity\MP\ProductSourceItem.cs" />
+    <Compile Include="Entity\MP\Refund.cs" />
+    <Compile Include="Entity\MP\Stock.cs" />
+    <Compile Include="Entity\MP\Product.cs" />
+    <Compile Include="Entity\MP\StockLog.cs" />
+    <Compile Include="Entity\MP\V_OrderItem.cs" />
+    <Compile Include="Entity\MyFinancialEvents.cs" />
+    <Compile Include="Entity\Order\OrderShipmentInfo.cs" />
+    <Compile Include="Entity\Parameter.cs" />
+    <Compile Include="Entity\Pricing\SkuTemplate.cs" />
+    <Compile Include="Entity\Purchase\POrder.cs" />
+    <Compile Include="Entity\Purchase\POrderItem.cs" />
+    <Compile Include="Entity\Purchase\PSource.cs" />
+    <Compile Include="Entity\RedisTemp.cs" />
+    <Compile Include="Entity\Removal.cs" />
+    <Compile Include="Entity\Report.cs" />
+    <Compile Include="Entity\ScheduleQuery.cs" />
+    <Compile Include="Entity\Setting.cs" />
+    <Compile Include="Entity\StateMapping.cs" />
+    <Compile Include="Entity\ThirdParty\BenasseInventory.cs" />
+    <Compile Include="Entity\ThirdParty\LabelLog.cs" />
+    <Compile Include="Entity\Token.cs" />
+    <Compile Include="Entity\ValidIp.cs" />
+    <Compile Include="Entity\Vendor.cs" />
+    <Compile Include="Entity\Walmart\WalmartItemOld.cs" />
+    <Compile Include="Entity\Walmart\WalmartItem.cs" />
+    <Compile Include="Entity\Walmart\WalmartOrder.cs" />
+    <Compile Include="Entity\Walmart\WalmartOrderItem.cs" />
+    <Compile Include="Entity\Walmart\WCategoryMap.cs" />
+    <Compile Include="Entity\Walmart\WalmartFeed.cs" />
+    <Compile Include="Entity\Walmart\WalmartFeedItem.cs" />
+    <Compile Include="Enum\AmazonMWS\FeedProcessingStatus.cs" />
+    <Compile Include="Enum\AmazonMWS\FeedType.cs" />
+    <Compile Include="Entity\Amazon\AsinShipping.cs" />
+    <Compile Include="Enum\AmazonMWS\ItemCondition.cs" />
+    <Compile Include="Enum\AmazonMWS\ReportProcessingStatus.cs" />
+    <Compile Include="Enum\AmazonMWS\ReportType.cs" />
+    <Compile Include="Enum\AmazonReport\ReportStatus.cs" />
+    <Compile Include="Enum\Amazon\CarrierAmazon.cs" />
+    <Compile Include="Enum\Amazon\FeedType.cs" />
+    <Compile Include="Enum\Amazon\FulfillmentAction.cs" />
+    <Compile Include="Enum\Amazon\FulfillmentBy.cs" />
+    <Compile Include="Enum\Amazon\FulfillmentOrderStatus.cs" />
+    <Compile Include="Enum\Amazon\InboundShipmentStatus.cs" />
+    <Compile Include="Enum\Amazon\FulfillmentShipmentStatus.cs" />
+    <Compile Include="Enum\Amazon\OrderItemStatus.cs" />
+    <Compile Include="Enum\Amazon\OrderItemSubStatus.cs" />
+    <Compile Include="Enum\Amazon\ReportEnums.cs" />
+    <Compile Include="Enum\Amazon\ShippingSpeedCategory.cs" />
+    <Compile Include="Enum\Amazon\ShippingTemplate.cs" />
+    <Compile Include="Enum\CampaignManager\CampaignManagerCriteria.cs" />
+    <Compile Include="Enum\CampaignManager\ServingStatus.cs" />
+    <Compile Include="Enum\CampaignManager\State.cs" />
+    <Compile Include="Enum\ItemStatus.cs" />
+    <Compile Include="Enum\Jet\Carrier.cs" />
+    <Compile Include="Enum\Jet\OrderStatusJet.cs" />
+    <Compile Include="Enum\Jet\RefundReason.cs" />
+    <Compile Include="Enum\MP\ItemCondition.cs" />
+    <Compile Include="Enum\MP\ItemDestination.cs" />
+    <Compile Include="Enum\MP\ItemSourceChannel.cs" />
+    <Compile Include="Enum\MP\MPAll.cs" />
+    <Compile Include="Enum\MP\StockStatus.cs" />
+    <Compile Include="Enum\MP\MP.cs" />
+    <Compile Include="Enum\MP\ListingStatus.cs" />
+    <Compile Include="Enum\Project.cs" />
+    <Compile Include="Enum\Purchase\POrderItemStatus.cs" />
+    <Compile Include="Enum\Purchase\POrderStatus.cs" />
+    <Compile Include="Enum\RoyalMessage.cs" />
+    <Compile Include="Enum\System.cs" />
+    <Compile Include="Enum\Vendor.cs" />
+    <Compile Include="Enum\Walmart\CancellationReasonType.cs" />
+    <Compile Include="Enum\Walmart\FeedStatus.cs" />
+    <Compile Include="Enum\Walmart\FeedType.cs" />
+    <Compile Include="Enum\Walmart\IngestionStatus.cs" />
+    <Compile Include="Enum\Walmart\OrderStatus.cs" />
+    <Compile Include="Enum\Walmart\PriceType.cs" />
+    <Compile Include="Enum\Walmart\ReasonCodeType.cs" />
+    <Compile Include="Enum\Walmart\SubmapType.cs" />
+    <Compile Include="Enum\Warehouse.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AddressType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AddressTypeSupportNonCity.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AdjustmentBuyerPriceComponent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AdjustmentBuyerPriceComponentType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AdjustmentCurrencyAmount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AdjustmentDirectPaymentTypeComponent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AgeRecommendation.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AgeRecommendedDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AgeRecommendedUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AirFlowDisplacementDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AirFlowDisplacementUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholContentDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeverages.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeveragesAlcoholContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeveragesAlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeveragesNutritionalFactsGroup.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeveragesUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeveragesVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeveragesVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AlcoholicBeveragesVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AllergenInformation.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AllergenInformationType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonEnvelope.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonEnvelopeMessage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonEnvelopeMessageOperationType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonEnvelopeMessageType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonFeesFee.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonMaturityRatingType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonOnly.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonOnlyDropShipStatus.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonOnlyOutOfStockWebsiteMessage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonOnlyReplenishmentCategory.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonOnlyUnderlyingAvailability.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmazonVendorOnly.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmperageDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AmperageUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AntennaTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ApertureDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ApertureUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AreaDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AreaDimensionOptionalUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AreaUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AspectRatio.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AssemblyTimeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AssemblyTimeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\AudioEncodingType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\B2bQuantityPriceTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BaseCurrencyCode.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BaseCurrencyCodeWithDefault.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Battery.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryAverageLifeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryBatterySubgroup.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryBatterySubgroupBatteryType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryCellTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryLifeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryPowerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryPowerIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BatteryPowerUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Beauty.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyLithiumBatteryPackaging.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyMisc.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyMiscTargetGender.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyMiscUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyMiscVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyMiscVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyMiscVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeautyProductType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Beer.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeerAlcoholContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeerAlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeerUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeerVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeerVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeerVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Beverages.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeveragesAlcoholContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeveragesAlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeveragesUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeveragesVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeveragesVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BeveragesVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BluRayRegionType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BootSizeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BootSizeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BurnTimeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BurnTimeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BuyerPriceComponent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\BuyerPriceComponentType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CalciumUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CapacityUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CapacityUnitMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CarrierCode.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CarSeatWeightGroupEUType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CharacterDataType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CholesterolUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ClothingSizeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ClothingSizeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CollectibleCard.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ColorMap.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ColorSpecification.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ComputerPlatform.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ComputerPlatformType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ComputerPlatformValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ConditionInfo.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ConditionType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ContinuousShootingDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ContinuousShootingUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Costume.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CurencyDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CurrencyAmount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CurrencyAmountWithDefault.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CurrentDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CurrentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Customer.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CustomerReturnPolicyType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CustomizationInfoType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CycleLengthDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\CycleLengthUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DataTransferUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DatedCompareAtPrice.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DatedPrice.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DateIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DateUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DegreeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DegreeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DeliveryChannel.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DensityDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DensityUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Dimensions.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DirectPaymentTypeComponent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DistributionDesignationValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\DockingStationExternalInterfaceTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EmailAddressType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EmailAddressTypePreferredFormat.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EnergyConsumptionDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EnergyConsumptionUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EnergyContentUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EnergyDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EnergyLabelEfficiencyClass.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EnergyRatingType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\EnergyUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Food.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodAlcoholContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodAlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodAndBeverages.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodAndBeveragesLithiumBatteryPackaging.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodAndBeveragesProductType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodAndBeveragesTargetGender.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FoodVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ForceDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ForceUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ForwardFacingWeight.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FrequencyDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FrequencyIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FrequencyUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FulfillmentCenter.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FulfillmentCenterOperatingHours.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FulfillmentMethod.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FulfillmentServiceLevel.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\FulfillReadiness.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\GiftCardsFormatType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\GlobalCurrencyCode.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\GraduationInterval.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\GraphicsRAMTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardDriveInterfaceTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquor.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquorAlcoholContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquorAlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquorNutritionalFactsGroup.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquorUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquorVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquorVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardLiquorVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardnessDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardnessUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HardwareInterfaceValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HazmatItemType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Header.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HeightRecommendation.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Hobbies.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HobbiesLithiumBatteryPackaging.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HouseholdSupplies.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HouseholdSuppliesUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HouseholdSuppliesVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HouseholdSuppliesVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HouseholdSuppliesVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HumanInterfaceInputType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\HumanInterfaceOutputType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\IdentityPackageType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Inventory.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\InventoryLookup.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\InventorySwitchFulfillmentTo.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ItemChoiceType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ItemChoiceType1.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ItemChoiceType2.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ItemChoiceType3.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ItemChoiceType4.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\JewelryLengthDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\JewelryLengthUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\JewelryWeightDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\JewelryWeightUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LanguageStringType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LanguageSWVG.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LengthDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LengthDimensionOptionalUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LengthIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LengthUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Listings.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LithiumBatteryPackagingType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LoyaltyCustomAttribute.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LuminanceDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LuminanceIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LuminancePositiveIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LuminanceUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LuminiousIntensityDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\LuminousIntensityUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MagnificationDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MagnificationUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MemorySizeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MemorySizeIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MemorySizeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MillimeterDecimalDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MillimeterUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MinimumAgeRecommendedDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ModemTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\MusicFormatType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NameValuePair.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NeckSizeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NeckSizeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NoiseLevelDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NoiseLevelUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroup.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupCalcium.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupCholesterol.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupDietaryFiber.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupEnergyContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupEnergyContentFromFat.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupInsolubleFiber.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupIron.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupMonounsaturatedFat.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupOtherCarbohydrate.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupPhosphorus.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupPolyunsaturatedFat.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupPotassium.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupProtein.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupSaturatedFat.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupServingSize.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupSodium.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupSolubleFiber.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupSugarAlcohol.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupSugars.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupThiamin.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupTotalCarbohydrate.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupTotalFat.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupTransFat.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupVitaminA.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionalFactsGroupVitaminC.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\NutritionServingUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OperatingHoursBase.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OpticalPowerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OpticalPowerUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OptionalLengthIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OptionalMagnificationDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OptionalResolutionDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAcknowledgement.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAcknowledgementItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAcknowledgementItemCancelReason.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAcknowledgementStatusCode.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAdjustment.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAdjustmentActionType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAdjustmentAdjustedItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAdjustmentAdjustedItemAdjustmentReason.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAdjustmentAdjustedItemPromotionAdjustments.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAdjustmentAdjustedItemPromotionAdjustmentsComponent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderAdjustmentCODCollectionMethod.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderFulfillment.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderFulfillmentCODCollectionMethod.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderFulfillmentFulfillmentData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrderFulfillmentItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OrganizationTaxRoles.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Originality.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Override.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OverrideCurrencyAmount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OverrideCurrencyAmountWithTax.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OverrideShippingOverride.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\OverrideShippingOverrideType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PhoneNumberType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PhoneNumberTypeType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PixelDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PixelUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PositiveCurrencyAmount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PositiveNonZeroWeightDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PositiveWeightDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PowerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PowerPlugType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PowerUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PressureDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PressureUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Price.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceQuantityPrice.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_0.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_1.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_2.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_3.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_4.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_5.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_6.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_7.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_8.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceRental_9.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PriceSale.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PricingActionValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProcessingReport.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProcessingReportProcessingSummary.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProcessingReportResult.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProcessingReportResultAdditionalInfo.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProcessingReportResultResultCode.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProcessingReportStatusCode.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProcessorTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Product.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductDescriptionData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductDescriptionDataCPSIAWarning.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductDescriptionDataOptionalPaymentTypeExclusion.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductDescriptionDataTSDAgeWarning.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductDescriptionDataTSDLanguage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductDescriptionDataTSDWarning.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductDiscoveryData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductGtinExemptionReason.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductImage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductImageImageType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductProductData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ProductRegisteredParameter.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PromotionApplicationType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PromotionDataType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\PromotionDataTypeComponent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\QuantityPriceTypes.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\RearFacingWeight.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\RebateType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Recall.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\RelatedProductID.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\RelatedProductIDType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Relationship.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\RelationshipRelation.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\RelationshipRelationType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\RemovableMemoryValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ResistanceDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ResistanceUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ResolutionDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ResolutionUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SerialNumberFormatType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ServingDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ServingUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReport.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportAdjustment.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportAdjustmentAdjustedItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportAdjustmentFulfillment.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportAdjustmentFulfillmentAdjustedItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportAdjustmentFulfillmentAdjustedItemPromotionAdjustment.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportAdjustmentItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportMiscEvent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportOrder.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportOrderFulfillment.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportOrderFulfillmentItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportOrderFulfillmentItemPromotion.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportOrderItem.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportOtherFee.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportOtherTransaction.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SettlementReportSettlementData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ShoulderHarnessHeight.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpatialDimensions.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpeedDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpeedUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Spirits.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpiritsAlcoholContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpiritsAlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpiritsUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpiritsVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpiritsVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SpiritsVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StandardProductID.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StandardProductIDType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StoneCreationMethod.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StringCurrencyAmountWithDefault.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StringLengthDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StringLengthOptionalDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StringOverrideCurrencyAmount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StringTemperatureDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\StringTimeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SubscriptionTermDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SunProtectionDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SunProtectionUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SupportedImageTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SweetnessAtHarvestDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\SweetnessAtHarvestUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TargetGenderType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TemperatureDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TemperatureRatingDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TemperatureRatingUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TemperatureUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ThreeDTechnologyValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TimeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TimeIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TimeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TorqueType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\TorqueUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToyAwardType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Toys.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToysAndGames.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToysAndGamesLithiumBatteryPackaging.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToysAndGamesTargetGender.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToysProductType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToysVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToysVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ToysVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VideotapeRecordingSpeedType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VineyardYieldDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VineyardYieldUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VinylRecordDetailsType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VoltageDecimalDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VoltageIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VoltageIntegerDimensionOptionalUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VoltageUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VolumeAndVolumeRateDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VolumeDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VolumeIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VolumeRateDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VolumeRateUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\VolumeUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WaterResistantType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WattageDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WattageDimensionOptionalUnit.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WattageIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WattageUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WeightDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WeightIntegerDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WeightRecommendation.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WeightRecommendationType.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WeightUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\Wine.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WineAlcoholContent.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WineAlcoholContentUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WineNutritionalFactsGroup.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WineUnitCount.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WineVariationData.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WineVariationDataParentage.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WineVariationDataVariationTheme.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\WirelessTypeValues.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ZoomDimension.cs" />
+    <Compile Include="Poco\AmazonMWS\Feeds\ZoomUnitOfMeasure.cs" />
+    <Compile Include="Poco\AmazonMWS\MoneyType.cs" />
+    <Compile Include="Poco\AmazonMWS\Points.cs" />
+    <Compile Include="Poco\AmazonMWS\Request\FeesEstimateRequest.cs" />
+    <Compile Include="Poco\AmazonMWS\Request\GetFeedSubmissionListByNextTokenRequest.cs" />
+    <Compile Include="Poco\AmazonMWS\Request\GetFeedSubmissionListRequest.cs" />
+    <Compile Include="Poco\AmazonMWS\Request\GetFeedSubmissionResultRequest.cs" />
+    <Compile Include="Poco\AmazonMWS\Request\GetLowestPricedOffersForASINRequest.cs" />
+    <Compile Include="Poco\AmazonMWS\Request\SubmitFeedRequest.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\AmazonEnvelope.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\FeedSubmissionInfo.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetFeedSubmissionListByNextTokenResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetFeedSubmissionListResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetLowestPricedOffersForASINResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetMatchingProductResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetMyFeesEstimateResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetReportRequestListResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetRequestReport.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetRequestReportResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\GetTransportContentResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\ListFinancialEventsByNextTokenResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\ListFinancialEventsResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\ListInboundShipmentItemsResponse.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\ListInboundShipmentsResult.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\ListInventorySupplyResult.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\ResponseMetadata.cs" />
+    <Compile Include="Poco\AmazonMWS\Response\SubmitFeedResponse.cs" />
+    <Compile Include="Poco\Amazon\AmazonItem.cs" />
+    <Compile Include="Poco\Amazon\AmazonFulfillment.cs" />
+    <Compile Include="Poco\Amazon\AmazonShipment.cs" />
+    <Compile Include="Poco\Amazon\AmazonSkuFinalPricePoco.cs" />
+    <Compile Include="Poco\Amazon\AnyOfferChangedNotification.cs" />
+    <Compile Include="Poco\Amazon\FulfillmentOrdersPoco.cs" />
+    <Compile Include="Poco\Amazon\FulfillmentPreviewPoco.cs" />
+    <Compile Include="Poco\Amazon\FulfillmentPreviewRequestPoco.cs" />
+    <Compile Include="Poco\Amazon\GetShippingOffersRequest.cs" />
+    <Compile Include="Poco\Amazon\NotificationFulfillmentResp.cs" />
+    <Compile Include="Poco\Amazon\ShippingServicePoco.cs" />
+    <Compile Include="Poco\CampaignManager\Request\CreateAdGroup.cs" />
+    <Compile Include="Poco\CampaignManager\Request\CreateCampaign.cs" />
+    <Compile Include="Poco\CampaignManager\Request\ReportRequest.cs" />
+    <Compile Include="Poco\CampaignManager\Request\UpdateAdGroup.cs" />
+    <Compile Include="Poco\CampaignManager\Request\UpdateBiddableKeyword.cs" />
+    <Compile Include="Poco\CampaignManager\Request\UpdateCampaign.cs" />
+    <Compile Include="Poco\CampaignManager\Request\UpdateProfileRequest.cs" />
+    <Compile Include="Poco\CampaignManager\Response\AdGroup.cs" />
+    <Compile Include="Poco\CampaignManager\Response\AdGroupExtended.cs" />
+    <Compile Include="Poco\CampaignManager\Response\AdGroupResponse.cs" />
+    <Compile Include="Poco\CampaignManager\Response\Campaign.cs" />
+    <Compile Include="Poco\CampaignManager\Response\CampaignExtended.cs" />
+    <Compile Include="Poco\CampaignManager\Response\CampaignNegativeKeyword.cs" />
+    <Compile Include="Poco\CampaignManager\Response\CampaignNegativeKeywordExtended.cs" />
+    <Compile Include="Poco\CampaignManager\Response\CampaignResponse.cs" />
+    <Compile Include="Poco\CampaignManager\Response\Keyword.cs" />
+    <Compile Include="Poco\CampaignManager\Response\KeywordExtended.cs" />
+    <Compile Include="Poco\CampaignManager\Response\KeywordResponse.cs" />
+    <Compile Include="Poco\CampaignManager\Response\NegativeKeyword.cs" />
+    <Compile Include="Poco\CampaignManager\Response\NegativeKeywordExtended.cs" />
+    <Compile Include="Poco\CampaignManager\Response\Profile.cs" />
+    <Compile Include="Poco\CampaignManager\Response\ReportResponse.cs" />
+    <Compile Include="Poco\CampaignManager\Response\TokenResponse.cs" />
+    <Compile Include="Poco\CampaignManager\Response\UpdateProfileResponse.cs" />
+    <Compile Include="Poco\Dashboard\DataManagement.cs" />
+    <Compile Include="Poco\Ebay\Request\GetItemRequest.cs" />
+    <Compile Include="Poco\Ebay\Request\ReviseInventoryStatusRequest.cs" />
+    <Compile Include="Poco\Ebay\Request\ReviseItemRequest.cs" />
+    <Compile Include="Poco\Ebay\Response\GetItemResponse.cs" />
+    <Compile Include="Poco\Ebay\Response\ReviseInventoryStatusResponse .cs" />
+    <Compile Include="Poco\Ebay\Response\ReviseItemResponse.cs" />
+    <Compile Include="Poco\IRawOrder.cs" />
+    <Compile Include="Poco\Jet\AcceptedRejectedOrderPoco.cs" />
+    <Compile Include="Poco\Jet\AsinMasterPoco.cs" />
+    <Compile Include="Poco\Jet\Request\AcceptedRejectedOrder.cs" />
+    <Compile Include="Poco\Jet\Request\Archive.cs" />
+    <Compile Include="Poco\Jet\Request\InventoryUpload.cs" />
+    <Compile Include="Poco\Jet\Request\OrderUrls.cs" />
+    <Compile Include="Poco\Jet\Request\PriceUpload.cs" />
+    <Compile Include="Poco\Jet\Request\Refund.cs" />
+    <Compile Include="Poco\Jet\Request\Exception.cs" />
+    <Compile Include="Poco\Jet\Request\ShipOrder.cs" />
+    <Compile Include="Poco\Jet\Request\ShippingExceptionUpload.cs" />
+    <Compile Include="Poco\Jet\Request\SkuUpload.cs" />
+    <Compile Include="Poco\Jet\Request\VariationUpload.cs" />
+    <Compile Include="Poco\Jet\Response\CategorysAttributeMapping.cs" />
+    <Compile Include="Poco\Jet\Response\CheckReturnDetail.cs" />
+    <Compile Include="Poco\Jet\Response\Error.cs" />
+    <Compile Include="Poco\Jet\Response\InventoryRetriveal.cs" />
+    <Compile Include="Poco\Jet\Response\NodeUrls.cs" />
+    <Compile Include="Poco\Jet\Response\OrderDetail.cs" />
+    <Compile Include="Poco\Jet\Response\PriceRetrieval.cs" />
+    <Compile Include="Poco\Jet\Response\RefundAuthIdList.cs" />
+    <Compile Include="Poco\Jet\Response\RefundResponse.cs" />
+    <Compile Include="Poco\Jet\Response\ShipmentExceptionRetrieval.cs" />
+    <Compile Include="Poco\Jet\Response\SingleSKURetrieval.cs" />
+    <Compile Include="Poco\Jet\Response\SkuSalesData.cs" />
+    <Compile Include="Poco\Jet\Response\SkuUrls.cs" />
+    <Compile Include="Poco\Jet\Response\TaxonomyNodeIds.cs" />
+    <Compile Include="Poco\Jet\Response\Token.cs" />
+    <Compile Include="Poco\Jet\Response\VariationRetrieval.cs" />
+    <Compile Include="Poco\KeyValue.cs" />
+    <Compile Include="Poco\MP\ListingUpdatePoco.cs" />
+    <Compile Include="Poco\MP\OrderItemSearchPoco.cs" />
+    <Compile Include="Poco\MP\ReviserPoco.cs" />
+    <Compile Include="Poco\MP\StockPoco.cs" />
+    <Compile Include="Poco\PackingSlipPoco.cs" />
+    <Compile Include="Poco\ServiceResponse.cs" />
+    <Compile Include="Poco\ThirdParty\BenasseInventoryResponse.cs" />
+    <Compile Include="Poco\ThirdParty\BenasseLabelLogPoco.cs" />
+    <Compile Include="Poco\ThirdParty\CommonOrderItem.cs" />
+    <Compile Include="Poco\ValidImagePoco.cs" />
+    <Compile Include="Poco\Walmart\Api\BulkPriceFeed.cs" />
+    <Compile Include="Poco\Walmart\Api\FeedAcknowledgement.cs" />
+    <Compile Include="Poco\Walmart\Api\InventoryFeed.cs" />
+    <Compile Include="Poco\Walmart\Api\MPItemFeed.cs" />
+    <Compile Include="Poco\Walmart\Api\PartnerFeedResponse.cs" />
+    <Compile Include="Poco\Walmart\Api\PurchaseOrder.cs" />
+    <Compile Include="Poco\Walmart\Api\ShipConfirmRequest.cs" />
+    <Compile Include="Poco\Walmart\AllOrdersUrlPoco.cs" />
+    <Compile Include="Poco\Walmart\PriceQuantityPoco.cs" />
+    <Compile Include="Poco\Walmart\Request3\CancelOrderLinesRequest.cs" />
+    <Compile Include="Poco\Walmart\Request3\OrderRefundRequest.cs" />
+    <Compile Include="Poco\Walmart\Request3\OrderShipmentRequest.cs" />
+    <Compile Include="Poco\Walmart\Request\InventoryReq.cs" />
+    <Compile Include="Poco\Walmart\Request\OrderRefund.cs" />
+    <Compile Include="Poco\Walmart\Request\UpdatePriceReq.cs" />
+    <Compile Include="Poco\Walmart\Request\UpdateShippingStatusReq.cs" />
+    <Compile Include="Poco\Walmart\Response3\AcknowledgeOrder.cs" />
+    <Compile Include="Poco\Walmart\Response3\AllOrders.cs" />
+    <Compile Include="Poco\Walmart\Response3\FeedAcknowledgement.cs" />
+    <Compile Include="Poco\Walmart\Response3\FeedAcknowledgement2.cs" />
+    <Compile Include="Poco\Walmart\Response3\FeedStatusResponse.cs" />
+    <Compile Include="Poco\Walmart\Response3\GetAnItemResponse.cs" />
+    <Compile Include="Poco\Walmart\Response3\OrderShipmentResponse.cs" />
+    <Compile Include="Poco\Walmart\Response3\WalmartOrder.cs" />
+    <Compile Include="Poco\Walmart\Response3\WalmartOrderList.cs" />
+    <Compile Include="Poco\Walmart\Response\InventoryResp.cs" />
+    <Compile Include="Poco\Walmart\Response\PartnerFeedResp.cs" />
+    <Compile Include="Poco\Walmart\WalmartProductRoot.cs" />
+    <Compile Include="Poco\Walmart\WalmartSearchRoot.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\Amazon\AsinDetailLogRepository.cs" />
+    <Compile Include="Repository\Amazon\AsinDetailRepository.cs" />
+    <Compile Include="Repository\Amazon\AsinFeeDetailLogRepository.cs" />
+    <Compile Include="Repository\Amazon\AsinFeeDetailRepository.cs" />
+    <Compile Include="Repository\Amazon\AsinMatchingRepository.cs" />
+    <Compile Include="Repository\Amazon\FeedRepository.cs" />
+    <Compile Include="Repository\Amazon\FeedSubmissionRepository.cs" />
+    <Compile Include="Repository\Amazon\InventoryRepository.cs" />
+    <Compile Include="Repository\Amazon\MyAsinRepository.cs" />
+    <Compile Include="Repository\Amazon\NotificationFulfillmentRepository.cs" />
+    <Compile Include="Repository\Amazon\NotificationFulfillmentShipmentPackageRepository.cs" />
+    <Compile Include="Repository\Amazon\PriceLogRepository.cs" />
+    <Compile Include="Repository\Amazon\PriceTemplateRepository.cs" />
+    <Compile Include="Repository\Amazon\Sku2Repository.cs" />
+    <Compile Include="Repository\Amazon\SkuRepository.cs" />
+    <Compile Include="Repository\DocumentArchiveRepository.cs" />
+    <Compile Include="Repository\Finance\FinanceSettlementRepository.cs" />
+    <Compile Include="Repository\Interface\IRepository.cs" />
+    <Compile Include="Repository\JobSchedulerLogRepository.cs" />
+    <Compile Include="Repository\MP\OrderItemRepository.cs" />
+    <Compile Include="Repository\MP\OrderRepository.cs" />
+    <Compile Include="Repository\MP\ListingRepository.cs" />
+    <Compile Include="Repository\MP\OrderShipmentRepository.cs" />
+    <Compile Include="Repository\MP\ProductRepository.cs" />
+    <Compile Include="Repository\MP\ProductSourceItemRepository.cs" />
+    <Compile Include="Repository\Order\OrderShipmentInfoRepository.cs" />
+    <Compile Include="Repository\ParameterRepository.cs" />
+    <Compile Include="Repository\RemovalRepository.cs" />
+    <Compile Include="Repository\Repository.cs" />
+    <Compile Include="Repository\StateMappingRepository.cs" />
+    <Compile Include="Repository\ValidIpRepository.cs" />
+    <Compile Include="Repository\VendorRepository.cs" />
+    <Compile Include="Repository\Walmart\WalmartFeedItemRepository.cs" />
+    <Compile Include="Repository\Walmart\WalmartOrderRepository.cs" />
+    <Compile Include="Repository\Walmart\WCategoryMapRepository.cs" />
+    <Compile Include="Repository\Walmart\WalmartFeedRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+    <None Include="Poco\AmazonMWS\Xsd\Amazon.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\amzn-base.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\amzn-envelope.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\amzn-header.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Beauty.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\FoodAndBeverages.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\FulfillmentCenter.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Inventory.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Item.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Listings.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\OrderAcknowledgement.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\OrderAdjustment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\OrderFulfillment.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\OrderReport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Override.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Price.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\ProcessingReport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Product.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\ProductImage.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Relationship.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\SettlementReport.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Poco\AmazonMWS\Xsd\Toys.xsd">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flexi.WebUI", "Flexi.WebUI\Flexi.WebUI.csproj", "{7B92D7BC-6009-4C63-A515-655C54902777}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Libraries", "Libraries", "{41520D09-1319-4879-A034-8EAA7EEDBB9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flexi.Identity.PostgreSQL", "Libraries\Flexi.Identity.PostgreSQL\Flexi.Identity.PostgreSQL.csproj", "{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flexi.Business", "Libraries\Flexi.Business\Flexi.Business.csproj", "{3B0F7285-BF6D-4A65-BBF5-480D7D3D01DC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flexi.Model", "Libraries\Flexi.Model\Flexi.Model.csproj", "{F639823D-95AA-42AD-A0C7-00A78DCDD642}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Flexi.Shared", "Libraries\Flexi.Shared\Flexi.Shared.csproj", "{5AB638E3-4269-4E18-8E6E-D0374406A2DB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7B92D7BC-6009-4C63-A515-655C54902777}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B92D7BC-6009-4C63-A515-655C54902777}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B92D7BC-6009-4C63-A515-655C54902777}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B92D7BC-6009-4C63-A515-655C54902777}.Release|Any CPU.Build.0 = Release|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B0F7285-BF6D-4A65-BBF5-480D7D3D01DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B0F7285-BF6D-4A65-BBF5-480D7D3D01DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B0F7285-BF6D-4A65-BBF5-480D7D3D01DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B0F7285-BF6D-4A65-BBF5-480D7D3D01DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F639823D-95AA-42AD-A0C7-00A78DCDD642}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F639823D-95AA-42AD-A0C7-00A78DCDD642}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F639823D-95AA-42AD-A0C7-00A78DCDD642}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F639823D-95AA-42AD-A0C7-00A78DCDD642}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5AB638E3-4269-4E18-8E6E-D0374406A2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5AB638E3-4269-4E18-8E6E-D0374406A2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5AB638E3-4269-4E18-8E6E-D0374406A2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5AB638E3-4269-4E18-8E6E-D0374406A2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{21018D34-2B0B-4EE1-BD1D-6CC6EC02CECF} = {41520D09-1319-4879-A034-8EAA7EEDBB9C}
+		{3B0F7285-BF6D-4A65-BBF5-480D7D3D01DC} = {41520D09-1319-4879-A034-8EAA7EEDBB9C}
+		{F639823D-95AA-42AD-A0C7-00A78DCDD642} = {41520D09-1319-4879-A034-8EAA7EEDBB9C}
+		{5AB638E3-4269-4E18-8E6E-D0374406A2DB} = {41520D09-1319-4879-A034-8EAA7EEDBB9C}
+	EndGlobalSection
+EndGlobal

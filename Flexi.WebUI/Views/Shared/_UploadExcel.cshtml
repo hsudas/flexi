@@ -1,0 +1,17 @@
+﻿@using (Html.BeginForm("UploadExcel", "Home",new { TableName = @ViewBag.TableName }, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <input type="file" class="filestyle" data-btnClass="btn-primary" name="postedFile" style="width:20px;" />
+            </div>
+            <div class="col-md-2">
+                <input type="submit" class="btn-primary" value="Import" />
+            </div>
+        </div>
+        
+    </div>
+}
+
+<script src="~/Scripts/bootstrap-filestyle.min.js"></script>

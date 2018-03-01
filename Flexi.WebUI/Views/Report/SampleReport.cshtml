@@ -1,0 +1,58 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>SampleReport</title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
+    <script src="~/Scripts/jtable/jquery.jtable.min.js"></script>
+    <link href="~/Scripts/jtable/themes/metro/blue/jtable.min.css" rel="stylesheet" />
+</head>
+<body>
+   
+        <div>
+            <div id="PersonTableContainer"></div>
+        </div>
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $('#PersonTableContainer').jtable({
+            title: 'Table of Product Source',
+            actions: {
+                listAction: '/Report/GetProductSource'
+            },
+            fields: {
+                ProductSourceId: {
+                    key: true,
+                    list: false
+                },
+                Status: {
+                    title: 'Status',
+                    width: '40%'
+                },
+                StoreId: {
+                    title: 'StoreId',
+                    width: '20%'
+                },
+                UnitPrice: {
+                    title: 'UnitPrice',
+                    width: '30%',
+                    create: false,
+                    edit: false
+                }
+            }
+        });
+
+        $('#PersonTableContainer').jtable('load');
+    });
+    </script>
+</body>
+</html>
