@@ -18,7 +18,7 @@ namespace AspNet.Identity.PostgreSQL
         /// Default constructor which uses the "DBContext" connectionString, often located in web.config.
         /// </summary>
         public PostgreSQLDatabase()
-            : this("DBContext")
+            : this("DefaultConnection")
         {
         }
 

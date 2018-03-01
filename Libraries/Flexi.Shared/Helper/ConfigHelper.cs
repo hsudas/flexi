@@ -21,10 +21,7 @@ namespace Flexi.Shared.Helper
             
         }
 
-        public string GetAsinImagePath()
-        {
-            return GetValue("asinImagePath");
-        }
+       
 
         public string GetApiUrl()
         {
@@ -47,15 +44,7 @@ namespace Flexi.Shared.Helper
             return "http://service.royalqg.com/";// "http://life62.royalqg.com/";//"http://localhost:55135/";//
         }
 
-        public string GetRedisDBHost()
-        {
-            return GetValue("redisdbhost");
-        }
-
-        public string GetRedisDBPassword()
-        {
-            return GetValue("redisdbpassword");
-        }
+       
 
         public string GetAwsSqsAccessKeyId()
         {
@@ -145,28 +134,28 @@ namespace Flexi.Shared.Helper
             }
         }
 
-        private Configuration GetConfiguration()
-        {
-            Configuration configuration;
-            try
-            {
-                string path = string.Concat(Path.GetFullPath("..\\..\\..\\"), "common.config");
-                configuration = ConfigurationManager.OpenMappedMachineConfiguration(new ConfigurationFileMap(path));
-            }
-            catch (Exception)
-            {
-                string path = "common.config";
-                configuration = ConfigurationManager.OpenMappedMachineConfiguration(new ConfigurationFileMap(path));
-            }
+        //private Configuration GetConfiguration()
+        //{
+        //    Configuration configuration;
+        //    try
+        //    {
+        //        string path = string.Concat(Path.GetFullPath("..\\..\\..\\"), "common.config");
+        //        configuration = ConfigurationManager.OpenMappedMachineConfiguration(new ConfigurationFileMap(path));
+        //    }
+        //    catch (Exception)
+        //    {
+        //        string path = "common.config";
+        //        configuration = ConfigurationManager.OpenMappedMachineConfiguration(new ConfigurationFileMap(path));
+        //    }
 
-            return configuration;
-        }
+        //    return configuration;
+        //}
 
-        private string GetValue(string key)
-        {
-            Configuration configuration = GetConfiguration();
-            string value = configuration.AppSettings.Settings[key].Value;
-            return value;
-        }
+        //private string GetValue(string key)
+        //{
+        //    Configuration configuration = GetConfiguration();
+        //    string value = configuration.AppSettings.Settings[key].Value;
+        //    return value;
+        //}
     }
 }

@@ -25,13 +25,14 @@ namespace Flexi.Model.Repository
                 {
                     try
                     {
-                        connection = new NpgsqlConnection(this.ReadRegistry(@"Canyon", "DbContext"));//ConfigurationManager.ConnectionStrings["DBContext"].ConnectionString//
+                        connection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+
 
                     }
                     catch (Exception)
                     {
 
-                        connection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["DBContext"].ConnectionString);
+                        connection = new NpgsqlConnection(ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
 
                     }
                 }
