@@ -111,7 +111,6 @@
     <Compile Include="Extension\MapChildExtension.cs" />
     <Compile Include="Extension\ObjectExtension.cs" />
     <Compile Include="Extension\StringExtension.cs" />
-    <Compile Include="Helper\CacheHelper.cs" />
     <Compile Include="Helper\ConfigHelper.cs" />
     <Compile Include="Helper\ConvertHelper.cs" />
     <Compile Include="Helper\DateHelper.cs" />

@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Dashboard</title>
+    <title>Flexi Web Dashboard</title>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jquery-ui-js")    
     @Styles.Render("~/Content/css")
@@ -78,13 +78,11 @@
                         <b class="caret"></b>
                     </a>
                     <ul id="operationMenu" class="dropdown-menu">
-                        <li><a href="@Url.Action("UploadFedexReport","Home")">Upload Fedex Report</a></li>
-                        <li><a href="@Url.Action("Inventories","Inventory")">FBA Inventory</a></li>
-                        <li><a href="@Url.Action("FbaAsinFee","Inventory")">FBA Asin Fee</a></li>
+                   
                         <li><a href="@Url.Action("DataManagement","Home")">Data Definition</a></li>
                         <li class="divider">Defined Screens</li>
                         @{
-                            List<Canyon.Model.Poco.Dashboard.DMDefinition> dmList = Dashboard.Utility.DataManagement.DMList();
+                            List<Flexi.Model.DM.DMDefinition> dmList = Flexi.WebUI.Utility.DataManagement.DMList();
                             foreach (var item in dmList)
                             {
                                 <li><a href="@Url.Action("DataManagement","Home")?dmId=@item.Id&ReportName=@item.Description">@item.Description</a></li>
@@ -98,11 +96,11 @@
                         <b class="caret"></b>
                     </a>
                     <ul id="reportMenu" class="dropdown-menu">
-                        <li><a href="@Url.Action("GenericReport","Report")">Order Report</a></li>
-                        <li class="nav-divider"></li>
+                       
+                      
                         @{
-                            List<Canyon.Operation.Model.Application.ReportDefinition> lst = Dashboard.Utility.ReportMenu.ReportList();
-                            List<string> categoryList = Dashboard.Utility.ReportMenu.GetCategories();
+                            List<Flexi.Model.Application.ReportDefinition> lst = Flexi.WebUI.Utility.ReportMenu.ReportList();
+                            List<string> categoryList = Flexi.WebUI.Utility.ReportMenu.GetCategories();
                             foreach (string item in categoryList)
                             {
                                 <li class="dropdown-submenu">
@@ -121,7 +119,7 @@
                                     </a>
                                     <ul class="dropdown-menu">
                                         @{
-                                            List<Canyon.Operation.Model.Application.ReportDefinition> reportList = Dashboard.Utility.ReportMenu.ReportListByCategory(item, lst);
+                                            List<Flexi.Model.Application.ReportDefinition> reportList = Flexi.WebUI.Utility.ReportMenu.ReportListByCategory(item, lst);
                                             foreach (var rpt in reportList)
                                             {
                                                 <li><a href="@Url.Action("BaseReport","Report")?ReportId=@rpt.ReportId&ReportName=@rpt.ReportName">@rpt.ReportName</a></li>

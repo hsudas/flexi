@@ -8,7 +8,6 @@ C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\MWSMerchantFulfillment_2015
 C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\Dapper.SimpleCRUD.dll
 C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\MongoRepository.Net45.dll
 C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\MWSFinances_2015-05-01_v2018-01-01.dll
-C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\StackExchange.Redis.dll
 C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\itextsharp.dll
 C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\Mapster.dll
 C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\TinyMapper.dll

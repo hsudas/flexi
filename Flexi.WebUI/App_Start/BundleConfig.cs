@@ -42,9 +42,9 @@ namespace Flexi.WebUI
                     "~/Scripts/Angular-js/angular-route.min.js",
                     "~/Scripts/Angular-js/angular-touch.min.js",
                     "~/Scripts/Angular-js/angular-sanitize.min.js"
-                ).IncludeDirectory("~/Scripts/Flexi.WebUI/Controllers", "*.js")
-                .IncludeDirectory("~/Scripts/Flexi.WebUI/Services", "*.js")
-                .Include("~/Scripts/Flexi.WebUI/app.js")
+                ).IncludeDirectory("~/Scripts/Dashboard/Controllers", "*.js")
+                .IncludeDirectory("~/Scripts/Dashboard/Services", "*.js")
+                .Include("~/Scripts/Dashboard/app.js")
                 );
 
             // Angular Highchart directives

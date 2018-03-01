@@ -34,7 +34,7 @@
                     <div class="col-md-10">
                         <div class="row">
                             <input type="hidden" id="cFilter" value='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(@ViewData["filters"]))' />
-                            @foreach (var item in (List<Canyon.Operation.Model.Application.ReportParameter>)ViewData["filters"])
+                            @foreach (var item in (List<Flexi.Model.Application.ReportParameter>)ViewData["filters"])
                             {
                                 if (item.Type == "date")
                                 {

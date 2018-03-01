@@ -1,7 +1,4 @@
 C:\Projects\flexi\Flexi.WebUI\obj\Debug\Flexi.WebUI.csprojResolveAssemblyReference.cache
-C:\Projects\flexi\Flexi.WebUI\bin\Canyon.DashboardLite.dll.config
-C:\Projects\flexi\Flexi.WebUI\bin\Canyon.DashboardLite.dll
-C:\Projects\flexi\Flexi.WebUI\bin\Canyon.DashboardLite.pdb
 C:\Projects\flexi\Flexi.WebUI\bin\Dapper.Contrib.Ext.dll
 C:\Projects\flexi\Flexi.WebUI\bin\Flexi.Business.dll
 C:\Projects\flexi\Flexi.WebUI\bin\Flexi.Identity.PostgreSQL.dll
@@ -14,7 +11,6 @@ C:\Projects\flexi\Flexi.WebUI\bin\Dapper.SimpleCRUD.dll
 C:\Projects\flexi\Flexi.WebUI\bin\MongoRepository.Net45.dll
 C:\Projects\flexi\Flexi.WebUI\bin\MWSFinances_2015-05-01_v2018-01-01.dll
 C:\Projects\flexi\Flexi.WebUI\bin\log4net.dll
-C:\Projects\flexi\Flexi.WebUI\bin\StackExchange.Redis.dll
 C:\Projects\flexi\Flexi.WebUI\bin\itextsharp.dll
 C:\Projects\flexi\Flexi.WebUI\bin\Mapster.dll
 C:\Projects\flexi\Flexi.WebUI\bin\TinyMapper.dll
@@ -54,5 +50,8 @@ C:\Projects\flexi\Flexi.WebUI\bin\System.Web.Razor.xml
 C:\Projects\flexi\Flexi.WebUI\bin\System.Web.WebPages.xml
 C:\Projects\flexi\Flexi.WebUI\bin\System.Web.WebPages.Deployment.xml
 C:\Projects\flexi\Flexi.WebUI\bin\System.Web.WebPages.Razor.xml
-C:\Projects\flexi\Flexi.WebUI\obj\Debug\Canyon.DashboardLite.dll
-C:\Projects\flexi\Flexi.WebUI\obj\Debug\Canyon.DashboardLite.pdb
+C:\Projects\flexi\Flexi.WebUI\bin\Flexi.WebUI.dll.config
+C:\Projects\flexi\Flexi.WebUI\bin\Flexi.WebUI.dll
+C:\Projects\flexi\Flexi.WebUI\bin\Flexi.WebUI.pdb
+C:\Projects\flexi\Flexi.WebUI\obj\Debug\Flexi.WebUI.dll
+C:\Projects\flexi\Flexi.WebUI\obj\Debug\Flexi.WebUI.pdb

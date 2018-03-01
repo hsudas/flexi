@@ -7,7 +7,6 @@ C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\Npgsql.dll
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\log4net.dll
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\MongoRepository.Net45.dll
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\Flexi.Model.dll
-C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\StackExchange.Redis.dll
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\Newtonsoft.Json.dll
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\RestSharp.dll
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\itextsharp.dll

@@ -118,8 +118,8 @@ namespace Flexi.Shared.Helper
 
         public EnvironmentType GetEnvironment()
         {
-            Configuration configuration = GetConfiguration();
-            string value = configuration.AppSettings.Settings["Environment"].Value;
+
+            string value = ConfigurationManager.AppSettings["Environment"];
             if (value.ToLower() == "test")
             {
                 return EnvironmentType.Test;
