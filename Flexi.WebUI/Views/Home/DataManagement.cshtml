@@ -49,7 +49,7 @@
                     <div class="col-md-10">
                         <div class="row">
                             <input type="hidden" id="cFilter" value='@Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(@ViewData["filters"]))' />
-                            @foreach (var item in (List<Royal.Model.DM.DMParameter>
+                            @foreach (var item in (List<Flexi.Model.DM.DMParameter>
     )ViewData["filters"])
                             {
                                 if (item.DataType == "date")

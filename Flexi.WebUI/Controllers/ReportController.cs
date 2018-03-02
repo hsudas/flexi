@@ -28,10 +28,10 @@ namespace Royal.Flexi.WebUI.Controllers
         
         public ActionResult GenericReport()
         {
-            if (MenuRestriction.CheckUserMenuAuth(User.Identity.GetUserId(), HttpContext) == false)
-            {
-                return RedirectToAction("NotAuthorized", "Home");
-            }
+            //if (MenuRestriction.CheckUserMenuAuth(User.Identity.GetUserId(), HttpContext) == false)
+            //{
+            //    return RedirectToAction("NotAuthorized", "Home");
+            //}
             return View();
         }
         public ActionResult InventoryReport()
@@ -40,10 +40,10 @@ namespace Royal.Flexi.WebUI.Controllers
         }
         public ActionResult BaseReport(string ReportId = "",string ReportName = "")
         {
-            if (MenuRestriction.CheckUserMenuAuth(User.Identity.GetUserId(), HttpContext) == false)
-            {
-                return RedirectToAction("NotAuthorized", "Home");
-            }
+            //if (MenuRestriction.CheckUserMenuAuth(User.Identity.GetUserId(), HttpContext) == false)
+            //{
+            //    return RedirectToAction("NotAuthorized", "Home");
+            //}
             List<ReportParameter> rpList = new List<ReportParameter>();
             ReportManager rm = new ReportManager(conStr);
             int rid = 0;
