@@ -130,14 +130,15 @@ namespace Flexi.WebUI.Controllers
             {
                 string comma = ",";
                 StringBuilder sb = new StringBuilder();
-                if (string.IsNullOrEmpty(dataRequest.KeyColumnValue))
-                {
-                    dataResponse.ResponseMessage = "Record has not been found. You can't update!";
-                    dataResponse.ResponseCode = "1";
-                    return dataResponse;
-                }
+               
                 if (dataRequest.OperationType == "update")
                 {
+                    if (string.IsNullOrEmpty(dataRequest.KeyColumnValue))
+                    {
+                        dataResponse.ResponseMessage = "Record has not been found. You can't update!";
+                        dataResponse.ResponseCode = "1";
+                        return dataResponse;
+                    }
                     sb.Append("UPDATE ");
                     sb.Append(dataRequest.TableName + " SET ");
                     int index = 0;
