@@ -28,3 +28,7 @@ C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\Newtonsoft.Json.
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\obj\Debug\Flexi.Identity.PostgreSQL.csprojResolveAssemblyReference.cache
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\obj\Debug\Flexi.Identity.PostgreSQL.dll
 C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\obj\Debug\Flexi.Identity.PostgreSQL.pdb
+C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\Flexi.Shared.dll.config
+C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\bin\Debug\Flexi.Model.dll.config
+C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\obj\Debug\Flexi.Identity.PostgreSQL.csproj.CoreCompileInputs.cache
+C:\Projects\flexi\Libraries\Flexi.Identity.PostgreSQL\obj\Debug\Flexi.Identity.PostgreSQL.csproj.CopyComplete

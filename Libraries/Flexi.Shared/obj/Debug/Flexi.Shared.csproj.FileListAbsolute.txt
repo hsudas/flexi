@@ -10,3 +10,6 @@ C:\Projects\flexi\Libraries\Flexi.Shared\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\flexi\Libraries\Flexi.Shared\obj\Debug\Flexi.Shared.csprojResolveAssemblyReference.cache
 C:\Projects\flexi\Libraries\Flexi.Shared\obj\Debug\Flexi.Shared.dll
 C:\Projects\flexi\Libraries\Flexi.Shared\obj\Debug\Flexi.Shared.pdb
+C:\Projects\flexi\Libraries\Flexi.Shared\bin\Debug\Flexi.Model.dll.config
+C:\Projects\flexi\Libraries\Flexi.Shared\obj\Debug\Flexi.Shared.csproj.CoreCompileInputs.cache
+C:\Projects\flexi\Libraries\Flexi.Shared\obj\Debug\Flexi.Shared.csproj.CopyComplete

@@ -7,3 +7,5 @@ C:\Projects\flexi\Libraries\Flexi.Model\bin\Debug\RestSharp.xml
 C:\Projects\flexi\Libraries\Flexi.Model\obj\Debug\Flexi.Model.csprojResolveAssemblyReference.cache
 C:\Projects\flexi\Libraries\Flexi.Model\obj\Debug\Flexi.Model.dll
 C:\Projects\flexi\Libraries\Flexi.Model\obj\Debug\Flexi.Model.pdb
+C:\Projects\flexi\Libraries\Flexi.Model\obj\Debug\Flexi.Model.csproj.CoreCompileInputs.cache
+C:\Projects\flexi\Libraries\Flexi.Model\obj\Debug\Flexi.Model.csproj.CopyComplete

@@ -19,3 +19,7 @@ C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\Newtonsoft.Json.xml
 C:\Projects\flexi\Libraries\Flexi.Business\obj\Debug\Flexi.Business.csprojResolveAssemblyReference.cache
 C:\Projects\flexi\Libraries\Flexi.Business\obj\Debug\Flexi.Business.dll
 C:\Projects\flexi\Libraries\Flexi.Business\obj\Debug\Flexi.Business.pdb
+C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\Flexi.Model.dll.config
+C:\Projects\flexi\Libraries\Flexi.Business\bin\Debug\Flexi.Shared.dll.config
+C:\Projects\flexi\Libraries\Flexi.Business\obj\Debug\Flexi.Business.csproj.CoreCompileInputs.cache
+C:\Projects\flexi\Libraries\Flexi.Business\obj\Debug\Flexi.Business.csproj.CopyComplete
